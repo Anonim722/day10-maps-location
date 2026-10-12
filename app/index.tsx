@@ -142,7 +142,7 @@ export default function MapScreen() {
                 <View style={styles.headerBadge}>
                     <Text style={styles.badgeTitle}>📍 Збережено місць: {pins.length}</Text>
                     <Text style={styles.badgeSubtitle}>Тапніть по карті, щоб поставити мітку</Text>
-                    {coordsError && <Text style={styles.badgeError}>Не вдалося визначити геопозицію</Text>}
+                    {coordsError && <Text style={styles.badgeError}>Не вдалося визначити геопозицію: {coordsError}</Text>}
                 </View>
 
                 {/* Кнопка швидкого центрування на собі */}
@@ -210,6 +210,8 @@ const styles = StyleSheet.create({
         fontSize: 11,
         color: '#EF4444',
         marginTop: 2,
+        maxWidth: 280,
+        textAlign: 'center',
     },
     myLocationButton: {
         position: 'absolute',
